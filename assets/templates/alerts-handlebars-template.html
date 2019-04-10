@@ -1,0 +1,7 @@
+{{#each data}}
+<article>
+  <a class="{{ this.alert_level }}" href="{{ this.env }}/alert/{{ this.id }}" target="_blank">
+    <strong>{{ this.label }}:</strong> {{ this.body_trimmed }}
+  </a>
+</article>
+{{/each}}

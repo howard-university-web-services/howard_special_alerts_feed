@@ -1,0 +1,14 @@
+{
+    "name": "howard/howard_special_alerts_feed",
+    "type": "drupal-module",
+    "description": "This module is designed to provide a special alerts feed block for Howard University",
+    "keywords": ["Drupal"],
+    "homepage": "https://github.com/howard-university-web-services/howard_special_alerts_feed",
+    "license": "GPL-2.0+",
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+        "8.x-1.x": "1.x-dev"
+        }
+    }
+}

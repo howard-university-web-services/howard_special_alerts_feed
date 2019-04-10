@@ -1,0 +1,65 @@
+/* Styles for Howard Alerts Feed */
+.alerts-feed-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+  clear: both;
+  text-align: left;
+}
+
+.alerts-feed-wrapper article {
+  width: 100%;
+}
+
+.alerts-feed-wrapper article a {
+  text-decoration: none;
+  padding: 24px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  text-shadow: none;
+  text-align: center;
+}
+
+@media screen and (min-width: 800px) {
+  .alerts-feed-wrapper article a {
+    font-size: 18px;
+  }
+}
+
+/* Low level */
+.alerts-feed-wrapper article a.low {
+  background: #F37F34;
+}
+
+/* High level */
+.alerts-feed-wrapper article a.high {
+  background: #e51937;
+}
+
+.alerts-feed-wrapper article a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Responsive padding adjustments */
+@media screen and (min-width: 1px) and (max-width: 1000px) {
+  .alerts-feed-wrapper article a {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1700px) {
+  .alerts-feed-wrapper article a {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
+
+@media screen and (min-width: 1700px) {
+  .alerts-feed-wrapper article a {
+    padding-left: 25%;
+    padding-right: 25%;
+  }
+}

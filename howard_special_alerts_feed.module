@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * @file
+ * Implements various hooks and functions to run the special alerts module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Block\BlockPluginInterface;
+
+/**
+ * Implements hook_help().
+ *
+ * Shows the module's readme file on the help page.
+ */
+function howard_special_alerts_feed_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.howard_special_alerts_feed':
+      $filepath = dirname(__FILE__) . '/README.md';
+      if (file_exists($filepath)) {
+        $readme = file_get_contents($filepath);
+      }
+      else {
+        $filepath = dirname(__FILE__) . '/README.txt';
+        if (file_exists($filepath)) {
+          $readme = file_get_contents($filepath);
+        }
+      }
+      if (!isset($readme)) {
+        return NULL;
+      }
+      if (\Drupal::moduleHandler()->moduleExists('markdown')) {
+        // TODO Add markdown support.
+        $output = '<pre>' . $readme . '</pre>';
+      } else {
+        $output = '<pre>' . $readme . '</pre>';
+      }
+
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ *
+ * This hook defines the template, also need to reference this in hook_block_view()
+ */
+function howard_special_alerts_feed_theme() {
+  return array(
+    'howard_special_alerts_feed_templating' => array(
+      'variables' => array(),
+      'template' => 'howard_special_alerts_feed',
+      'path' => drupal_get_path('module', 'howard_special_alerts_feed') . '/assets/templates'
+    ),
+  );
+}

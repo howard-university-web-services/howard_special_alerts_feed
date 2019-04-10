@@ -1,0 +1,11 @@
+howard_special_alerts_feed.alerts_feed:
+  css:
+    component:
+      assets/css/alerts-feed.css: {}
+  js:
+    assets/js/handlebars.js: {}
+    assets/js/alerts-feed.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal

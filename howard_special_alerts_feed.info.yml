@@ -1,0 +1,11 @@
+name: 'Howard Special Alerts Feed'
+type: module
+description: 'Custom feed of Special Alerts for use on all Howard sites. Displays all special alerts put out by newsroom.howard.edu.'
+core: 8.x
+version: VERSION
+package: 'Howard University'
+
+configure: howard_special_alerts_feed.admin
+
+dependencies:
+  - drupal:block
