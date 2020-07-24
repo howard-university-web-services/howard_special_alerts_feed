@@ -14,7 +14,7 @@
 
 .alerts-feed-wrapper article a.newsroom-alert {
   text-decoration: none;
-  padding: 16px;
+  padding: 35px;
   color: #fff;
   display: block;
   font-size: 16px;
@@ -25,6 +25,7 @@
 @media screen and (min-width: 800px) {
   .alerts-feed-wrapper article a.newsroom-alert {
     font-size: 18px;
+    padding: 16px;
   }
 }
 
