@@ -4,8 +4,6 @@ description: 'Custom feed of Special Alerts for use on all Howard University sit
 core: 8.x
 version: VERSION
 package: 'Howard University'
-
 configure: howard_special_alerts_feed.admin
-
 dependencies:
   - drupal:block

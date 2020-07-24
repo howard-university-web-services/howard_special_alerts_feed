@@ -52,9 +52,9 @@ class SpecialAlertsFeedBlock extends BlockBase {
       '#options' => [
         'https://newsroom.howard.edu' => $this
           ->t('Production'),
-        'http://stg.newsroom.howard.edu' => $this
+        'https://stg.newsroom.howard.edu' => $this
           ->t('Staging'),
-        'http://dev.newsroom.howard.edu' => $this
+        'https://dev.newsroom.howard.edu' => $this
           ->t('Development'),
       ],
       '#description' => $this->t('Which Howard Newsroom environment to pull from. Most times, this should be production.'),

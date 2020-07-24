@@ -1,12 +1,16 @@
 {{#each data}}
-  <article>
-    {{#if this.external_link}}
-      <a class="{{ this.alert_level }}" href="{{this.external_link}}" target="_blank">
+	<article id="newsroom-alert-{{ this.id }}" class="newsroom-alert--{{ this.alert_level }}">
+		{{#if this.external_link}}
+		<a class="newsroom-alert newsroom-alert--{{ this.alert_level }}" href="{{ this.external_link }}" target="_blank">
     {{else}}
-      <a class="{{ this.alert_level }}" href="{{ this.env }}/alert/{{ this.id }}" target="_blank">
+    <a class="newsroom-alert newsroom-alert--{{ this.alert_level }}" href="{{ this.env }}/alert/{{ this.id }}" target="_blank">
     {{/if}}
       <strong>{{ this.label }}:</strong>
       {{ this.body_trimmed }}
     </a>
+    <a class="newsroom-alert-dismiss" data-alert-id="{{ this.id }}">
+      <span class="hidden">Dismiss alert
+        {{ this.id }}</span>
+			</a>
   </article>
 {{/each}}
