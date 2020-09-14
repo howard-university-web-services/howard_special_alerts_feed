@@ -37,7 +37,7 @@
           var hours = fullDate.getUTCHours();
           var minutes = fullDate.getUTCMinutes();
           var currentTime = hours + ":" + minutes + ":00";
-          var path = drupalSettings.howard_special_alerts_feed.pathToAlertsFeedList + "/api/alerts?filter[start_date][value]=" + currentDate + "%20" + currentTime + "&filter[start_date][operator]='<='&filter[end_date][value]=" + currentDate + "%20" + currentTime + "&filter[end_date][operator]='>='";
+          var path = drupalSettings.howard_special_alerts_feed.pathToAlertsFeedList + "/api/alerts?filter[start_date][value]=" + currentDate + "%20" + currentTime + "&filter[start_date][operator]='<='&filter[end_date][value]=" + currentDate + "%20" + currentTime + "&filter[end_date][operator]='>='&filter[alert_type]=alert";
           $.ajax({
             url: path,
             method: 'get',
