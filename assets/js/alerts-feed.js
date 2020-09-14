@@ -48,6 +48,7 @@
                   var cookie = EVENT_METHOD.getCookie('howard-newsroom-alerts--' + data.data[k]['id']);
                   if (cookie == null) {
                     data.data[k]['env'] = drupalSettings.howard_special_alerts_feed.pathToAlertsFeedList;
+                    data.data[k]['external_link'] = data.data[k]['external_link'][0]['url'];
                     alerts.push(data.data[k]);
                   }
                 }
