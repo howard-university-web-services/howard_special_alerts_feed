@@ -1,17 +1,19 @@
 <!--Handlebar templates start-->
 {{#each data}}
-	<article id="newsroom-alert-{{ this.id }}" class="newsroom-alert--{{ this.alert_level }}">
-		{{#if this.external_link}}
-		<a class="newsroom-alert newsroom-alert--{{ this.alert_level }}" href="{{ this.external_link }}" target="_blank">
+	<article id="newsroom-alert-{{ this.id }}" class="newsroom-alert--{{ this.attributes.field_alert_level }}">
+		{{#if this.attributes.field_alert_links.uri}}
+		<a class="newsroom-alert newsroom-alert--{{ this.attributes.field_alert_level }}" href="{{ this.attributes.field_alert_links.uri }}" target="_blank">
     {{else}}
-    <a class="newsroom-alert newsroom-alert--{{ this.alert_level }}" href="{{ this.env }}/alert/{{ this.id }}" target="_blank">
+    <a class="newsroom-alert newsroom-alert--{{ this.attributes.field_alert_level }}" href="{{ this.env }}{{ this.attributes.path.alias }}" target="_blank">
     {{/if}}
-      <strong>{{ this.label }}:</strong>
-      {{ this.body_trimmed }}
+      <strong>{{ this.attributes.title }}</strong>
+      {{#if this.attributes.field_alert_subtitle}}
+      : {{ this.attributes.field_alert_subtitle }}
+      {{/if}}
     </a>
     <a class="newsroom-alert-dismiss" data-alert-id="{{ this.id }}">
       <span class="hidden">Dismiss alert
         {{ this.id }}</span>
-			</a>
+		</a>
   </article>
 {{/each}}

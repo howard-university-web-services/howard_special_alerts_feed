@@ -1,6 +1,6 @@
 /**
  * @file
- * Contains the definition of the behaviour specialAlertsFeed.
+ * Contains the definition of the behavior specialAlertsFeed.
  */
 
 (function ($, Drupal, drupalSettings) {
@@ -25,6 +25,9 @@
           });
         },
         loadEventData: function () {
+          // Set URL
+          var site = 'http://thedig.howard.edu';
+
           // Get todays date, and format to yyyy-mm-dd
           var fullDate = new Date();
           var twoDigitMonth = (fullDate.getMonth() + 1) + "";
@@ -37,7 +40,7 @@
           var hours = fullDate.getUTCHours();
           var minutes = fullDate.getUTCMinutes();
           var currentTime = hours + ":" + minutes + ":00";
-          var path = drupalSettings.howard_special_alerts_feed.pathToAlertsFeedList + "/api/alerts?filter[start_date][value]=" + currentDate + "%20" + currentTime + "&filter[start_date][operator]='<='&filter[end_date][value]=" + currentDate + "%20" + currentTime + "&filter[end_date][operator]='>='&filter[alert_type]=alert";
+          var path = site + "/jsonapi/node/alert?filter[start-date][condition][path]=field_alert_start_date&filter[start-date][condition][value]=" + currentDate + "%20" + currentTime + "&filter[start-date][condition][operator]=%3C%3D&filter[end-date][condition][path]=field_alert_end_date&filter[end-date][condition][value]=" + currentDate + "%20" + currentTime + "&filter[end-date][condition][operator]=%3E%3D";
           $.ajax({
             url: path,
             method: 'get',
@@ -47,8 +50,8 @@
                 for (var k in data.data) {
                   var cookie = EVENT_METHOD.getCookie('howard-newsroom-alerts--' + data.data[k]['id']);
                   if (cookie == null) {
-                    data.data[k]['env'] = drupalSettings.howard_special_alerts_feed.pathToAlertsFeedList;
-                    data.data[k]['external_link'] = data.data[k]['external_link'][0]['url'];
+                    // Set the chosen env to be available.
+                    data.data[k]['env'] = site;
                     alerts.push(data.data[k]);
                   }
                 }
@@ -77,7 +80,7 @@
             $(this).on("click", function () {
               var alertId = $(this).attr("data-alert-id");
               $('#newsroom-alert-' + alertId).addClass('hidden');
-              EVENT_METHOD.setCookie('howard-newsroom-alerts--' + alertId, 'Howard Newsroom Alert ' + alertId + ' dismissed.', 1);
+              EVENT_METHOD.setCookie('howard-newsroom-alerts--' + alertId, 'Howard Dig Alert ' + alertId + ' dismissed.', 1);
             });
           });
         },
