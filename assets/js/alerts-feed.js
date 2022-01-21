@@ -26,7 +26,7 @@
         },
         loadEventData: function () {
           // Set URL
-          var site = 'http://thedig.howard.edu';
+          var site = 'https://thedig.howard.edu';
 
           // Get todays date, and format to yyyy-mm-dd
           var fullDate = new Date();
