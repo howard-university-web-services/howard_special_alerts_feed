@@ -40,7 +40,7 @@
           var hours = fullDate.getUTCHours();
           var minutes = fullDate.getUTCMinutes();
           var currentTime = hours + ":" + minutes + ":00";
-          var path = site + "/jsonapi/node/alert?filter[start-date][condition][path]=field_alert_start_date&filter[start-date][condition][value]=" + currentDate + "%20" + currentTime + "&filter[start-date][condition][operator]=%3C%3D&filter[end-date][condition][path]=field_alert_end_date&filter[end-date][condition][value]=" + currentDate + "%20" + currentTime + "&filter[end-date][condition][operator]=%3E%3D";
+          var path = site + "/jsonapi/node/alert?filter[start-date][condition][path]=field_alert_start_date&filter[start-date][condition][value]=" + currentDate + "%20" + currentTime + "&filter[start-date][condition][operator]=%3C%3D&filter[end-date][condition][path]=field_alert_end_date&filter[end-date][condition][value]=" + currentDate + "%20" + currentTime + "&filter[end-date][condition][operator]=%3E%3D&filter[status][value]=1";
           $.ajax({
             url: path,
             method: 'get',
