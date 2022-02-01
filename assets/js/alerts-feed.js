@@ -34,7 +34,7 @@
           if (twoDigitMonth.length == 1) twoDigitMonth = "0" + twoDigitMonth;
           var twoDigitDate = fullDate.getDate() + "";
           if (twoDigitDate.length == 1) twoDigitDate = "0" + twoDigitDate;
-          var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + twoDigitDate;
+          var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + twoDigitDate + "-05:00";
 
           // Get todays time, and format to 00:00:00
           var hours = fullDate.getUTCHours();
