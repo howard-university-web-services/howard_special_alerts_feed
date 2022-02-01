@@ -34,12 +34,12 @@
           if (twoDigitMonth.length == 1) twoDigitMonth = "0" + twoDigitMonth;
           var twoDigitDate = fullDate.getDate() + "";
           if (twoDigitDate.length == 1) twoDigitDate = "0" + twoDigitDate;
-          var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + twoDigitDate + "-05:00";
+          var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + twoDigitDate;
 
           // Get todays time, and format to 00:00:00
           var hours = fullDate.getUTCHours();
           var minutes = fullDate.getUTCMinutes();
-          var currentTime = hours + ":" + minutes + ":00";
+          var currentTime = hours + ":" + minutes + ":00-05:00";
           var path = site + "/jsonapi/node/alert?filter[start-date][condition][path]=field_alert_start_date&filter[start-date][condition][value]=" + currentDate + "%20" + currentTime + "&filter[start-date][condition][operator]=%3C%3D&filter[end-date][condition][path]=field_alert_end_date&filter[end-date][condition][value]=" + currentDate + "%20" + currentTime + "&filter[end-date][condition][operator]=%3E%3D&filter[status][value]=1";
           $.ajax({
             url: path,
