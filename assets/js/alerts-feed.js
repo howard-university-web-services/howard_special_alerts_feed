@@ -28,19 +28,10 @@
           // Set URL
           var site = 'https://thedig.howard.edu';
 
-          // Get todays date, and format to yyyy-mm-dd
-          var fullDate = new Date();
-          var twoDigitMonth = (fullDate.getMonth() + 1) + "";
-          if (twoDigitMonth.length == 1) twoDigitMonth = "0" + twoDigitMonth;
-          var twoDigitDate = fullDate.getDate() + "";
-          if (twoDigitDate.length == 1) twoDigitDate = "0" + twoDigitDate;
-          var currentDate = fullDate.getFullYear() + "-" + twoDigitMonth + "-" + twoDigitDate;
+          // Get todays date, and format to ISO
+          var isoDate = new Date().toISOString();
+          var path = site + "/jsonapi/node/alert?filter[start-date][condition][path]=field_alert_start_date&filter[start-date][condition][value]=" + isoDate + "&filter[start-date][condition][operator]=%3C%3D&filter[end-date][condition][path]=field_alert_end_date&filter[end-date][condition][value]=" + isoDate + "&filter[end-date][condition][operator]=%3E%3D&filter[status][value]=1";
 
-          // Get todays time, and format to 00:00:00
-          var hours = fullDate.getUTCHours();
-          var minutes = fullDate.getUTCMinutes();
-          var currentTime = hours + ":" + minutes + ":00-05:00";
-          var path = site + "/jsonapi/node/alert?filter[start-date][condition][path]=field_alert_start_date&filter[start-date][condition][value]=" + currentDate + "%20" + currentTime + "&filter[start-date][condition][operator]=%3C%3D&filter[end-date][condition][path]=field_alert_end_date&filter[end-date][condition][value]=" + currentDate + "%20" + currentTime + "&filter[end-date][condition][operator]=%3E%3D&filter[status][value]=1";
           $.ajax({
             url: path,
             method: 'get',
