@@ -48,7 +48,7 @@ function howard_special_alerts_feed_theme() {
     'howard_special_alerts_feed_templating' => [
       'variables' => [],
       'template' => 'howard_special_alerts_feed',
-      'path' => drupal_get_path('module', 'howard_special_alerts_feed') . '/assets/templates',
+      'path' => \Drupal::service('extension.path.resolver')->getPath('module', 'howard_special_alerts_feed') . '/assets/templates',
     ],
   ];
 }

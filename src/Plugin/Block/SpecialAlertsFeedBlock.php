@@ -58,7 +58,7 @@ class SpecialAlertsFeedBlock extends BlockBase {
     ];
     $build['#attached']['library'][] = 'howard_special_alerts_feed/howard_special_alerts_feed.alerts_feed';
     $build['#attached']['drupalSettings']['howard_special_alerts_feed'] = [
-      'pathToAlertsFeedModule' => drupal_get_path('module', 'howard_special_alerts_feed'),
+      'pathToAlertsFeedModule' => \Drupal::service('extension.path.resolver')->getPath('module', 'howard_special_alerts_feed'),
     ];
     return $build;
   }
