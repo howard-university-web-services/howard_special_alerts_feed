@@ -90,9 +90,10 @@
         }
       };
 
-      $(document, context).once('specialAlertsFeed').each(function () {
+      once('specialAlertsFeed', context).forEach(function (element) {
         EVENT_METHOD.loadEventData();
       });
+
 
     }
   };
