@@ -3,7 +3,7 @@ type: module
 description: 'Custom feed of Special Alerts for use on all Howard University sites. Displays all special alerts put out by thedig.howard.edu.'
 core: 8.x
 core_version_requirement: ^8 || ^9 || ^10
-version: '8.x-1.0'
+version: '8.x-2.0'
 package: 'Howard University'
 configure: howard_special_alerts_feed.admin
 dependencies:
