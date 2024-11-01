@@ -8,7 +8,7 @@
   'use strict';
 
   let specialAlertsFeed = {
-    alertBar: `<article id="" class=""> 
+    alertBar: `<article id="" class="">
                     <a class="newsroom-alert" href="">
                         <strong></strong>
                     </a>
@@ -25,7 +25,7 @@
         let bar = parser.parseFromString(specialAlertsFeed.alertBar, "text/html");
         let url = alert.env + alert.attributes.path.alias;
 
-        if (alert.attributes.field_alert_links.uri) {
+        if (alert.attributes.field_alert_links) {
           url = alert.attributes.field_alert_links.uri;
         }
         bar.querySelector("article").setAttribute('id', "newsroom-alert-" + alert.id + "");
