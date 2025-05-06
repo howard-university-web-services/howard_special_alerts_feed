@@ -45,7 +45,10 @@ class SpecialAlertsFeedBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
-    $this->configuration['special_alerts_feed_settings_environment'] = $form_state->getValue(['special_alerts_feed_settings', 'special_alerts_feed_settings_environment']);
+    $set = 'special_alerts_feed_settings';
+    $env = 'special_alerts_feed_settings_environment';
+    $env_settings = $form_state->getValue([$set, $env]);
+    $this->configuration['special_alerts_feed_settings_environment'] = $env_settings;
   }
 
   /**
