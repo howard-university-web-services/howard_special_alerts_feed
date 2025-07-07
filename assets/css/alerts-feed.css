@@ -1,4 +1,21 @@
-/* Styles for Howard Alerts Feed */
+/**
+ * @file
+ * Styles for Howard University Special Alerts Feed.
+ *
+ * This file contains all the styling for the Howard Special Alerts Feed module.
+ * It provides responsive design with different alert severity levels and
+ * dismissal functionality.
+ *
+ * @version 11.0.2
+ * @see howard_special_alerts_feed.module
+ * @see assets/js/alerts-feed.js
+ */
+
+/**
+ * Main wrapper for the alerts feed.
+ *
+ * Centers the content and provides base layout for alert items.
+ */
 .alerts-feed-wrapper {
   margin-left: auto;
   margin-right: auto;
@@ -7,11 +24,21 @@
   text-align: left;
 }
 
+/**
+ * Individual alert article container.
+ *
+ * Provides relative positioning for absolutely positioned dismiss button.
+ */
 .alerts-feed-wrapper article {
   width: 100%;
   position: relative;
 }
 
+/**
+ * Main alert link styling.
+ *
+ * Creates the prominent notification bar appearance with centered text.
+ */
 .alerts-feed-wrapper article a.newsroom-alert {
   text-decoration: none;
   padding: 35px;
@@ -22,6 +49,9 @@
   text-align: center;
 }
 
+/**
+ * Responsive font size adjustment for larger screens.
+ */
 @media screen and (min-width: 800px) {
   .alerts-feed-wrapper article a.newsroom-alert {
     font-size: 18px;
@@ -29,24 +59,41 @@
   }
 }
 
-/* Low level */
+/**
+ * Alert severity levels.
+ *
+ * Different background colors for different alert priorities.
+ */
+
+/* Low priority alert styling */
 .alerts-feed-wrapper article.newsroom-alert--low,
 .alerts-feed-wrapper article a.newsroom-alert--low {
-  background: #f37f34;
+  background: #f37f34; /* Howard University orange */
 }
 
-/* High level */
+/* High priority alert styling */
 .alerts-feed-wrapper article.newsroom-alert--high,
 .alerts-feed-wrapper article a.newsroom-alert--high {
-  background: #e51937;
+  background: #e51937; /* Howard University red */
 }
 
+/**
+ * Alert hover state.
+ *
+ * Maintains white text and adds underline on hover for better UX.
+ */
 .alerts-feed-wrapper article a.newsroom-alert:hover {
   color: #fff;
   text-decoration: underline;
 }
 
-/* Responsive padding adjustments */
+/**
+ * Responsive padding adjustments.
+ *
+ * Provides optimal spacing across different screen sizes.
+ */
+
+/* Mobile devices: Reduced padding for smaller screens */
 @media screen and (min-width: 1px) and (max-width: 1000px) {
   .alerts-feed-wrapper article a.newsroom-alert {
     padding-left: 24px;
@@ -54,6 +101,7 @@
   }
 }
 
+/* Tablet devices: Percentage-based padding */
 @media screen and (min-width: 1000px) and (max-width: 1700px) {
   .alerts-feed-wrapper article a.newsroom-alert {
     padding-left: 15%;
@@ -61,6 +109,7 @@
   }
 }
 
+/* Desktop devices: Maximum padding for readability */
 @media screen and (min-width: 1700px) {
   .alerts-feed-wrapper article a.newsroom-alert {
     padding-left: 25%;
@@ -68,6 +117,11 @@
   }
 }
 
+/**
+ * Dismiss button styling.
+ *
+ * Creates a circular close button in the top-right corner of each alert.
+ */
 .alerts-feed-wrapper article a.newsroom-alert-dismiss {
   display: block;
   color: #fff;
@@ -82,11 +136,21 @@
   opacity: 0.8;
 }
 
+/**
+ * Dismiss button hover state.
+ *
+ * Increases opacity and shows pointer cursor on hover.
+ */
 .alerts-feed-wrapper article a.newsroom-alert-dismiss:hover {
   opacity: 1;
   cursor: pointer;
 }
 
+/**
+ * Dismiss button X icon.
+ *
+ * Creates the X symbol using CSS pseudo-elements for better accessibility.
+ */
 .alerts-feed-wrapper article a.newsroom-alert-dismiss:before,
 .alerts-feed-wrapper article a.newsroom-alert-dismiss:after {
   position: absolute;
@@ -104,3 +168,22 @@
 .alerts-feed-wrapper article a.newsroom-alert-dismiss:after {
   transform: rotate(-45deg);
 }
+
+/**
+ * State classes for JavaScript manipulation.
+ */
+
+/* Hidden state for dismissed alerts */
+.alerts-feed-wrapper article.hidden {
+  display: none;
+}
+
+/*
+ * Body state classes.
+ *
+ * The following classes are added to the body element by JavaScript:
+ * - .alerts-active: Added when alerts are present on the page
+ * - .no-alerts: Added when no alerts are present on the page
+ *
+ * These can be used in custom CSS to adjust global styles based on alert state.
+ */

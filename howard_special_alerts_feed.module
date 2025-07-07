@@ -2,7 +2,23 @@
 
 /**
  * @file
- * Implements various hooks and functions to run the special alerts module.
+ * Howard Special Alerts Feed module.
+ *
+ * This module provides a dynamic special alerts feed block for Howard University
+ * websites. It fetches real-time alerts from thedig.howard.edu and displays
+ * them as dismissible notification bars.
+ *
+ * Key features:
+ * - Real-time alert fetching from thedig.howard.edu
+ * - Date-based filtering for active alerts
+ * - Dismissible alerts with cookie persistence
+ * - Responsive design with mobile support
+ * - Multiple alert severity levels
+ * - Accessibility features
+ *
+ * @see README.md for detailed documentation
+ * @see API.md for API reference
+ * @see DEVELOPER.md for development guide
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;

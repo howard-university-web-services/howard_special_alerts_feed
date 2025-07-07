@@ -6,17 +6,33 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Special alerts feed block.
+ * Provides a Howard Special Alerts Feed block.
+ *
+ * This block fetches and displays special alerts from thedig.howard.edu
+ * using JavaScript. The alerts are rendered as dismissible notification bars
+ * with support for different severity levels.
+ *
+ * Features:
+ * - Automatic alert fetching from external API
+ * - Date-based filtering for active alerts
+ * - User dismissal with cookie persistence
+ * - Responsive design
+ * - Multiple alert severity levels (low, high)
+ * - Accessibility support
  *
  * @Block(
  *   id = "special_alerts_feed",
- *   admin_label = @Translation("Howard Special Alerts Feed")
+ *   admin_label = @Translation("Howard Special Alerts Feed"),
+ *   category = @Translation("Howard University")
  * )
  */
 class SpecialAlertsFeedBlock extends BlockBase {
 
   /**
    * {@inheritdoc}
+   *
+   * Provides default configuration for the block.
+   * Currently stores site URL configuration.
    */
   public function defaultConfiguration() {
     return [
