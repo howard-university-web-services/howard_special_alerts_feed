@@ -2,24 +2,29 @@
     "name": "howard/howard_special_alerts_feed",
     "type": "drupal-module",
     "description": "This module is designed to provide a special alerts feed block for Howard University",
-    "keywords": ["Drupal"],
+    "keywords": ["Drupal", "Howard University", "alerts", "feed", "block"],
     "homepage": "https://github.com/howard-university-web-services/howard_special_alerts_feed",
     "license": "GPL-2.0+",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "authors": [
         {
           "name": "Dan Rogers",
-          "homepage": "https://www.drupal.org/u/dan_rogers",
+          "homepage": "https://github.com/dan-rogers",
           "role": "Maintainer"
         }
     ],
     "support": {
         "issues": "https://github.com/howard-university-web-services/howard_special_alerts_feed/issues",
-        "source": "https://github.com/howard-university-web-services/howard_special_alerts_feed"
+        "source": "https://github.com/howard-university-web-services/howard_special_alerts_feed",
+        "docs": "https://github.com/howard-university-web-services/howard_special_alerts_feed/blob/main/README.md"
+    },
+    "require": {
+        "drupal/core": "^10 || ^11"
     },
     "extra": {
-        "branch-alias": {
-        "8.x-1.x": "1.x-dev"
+        "drupal": {
+            "version": "11.0.2"
         }
     }
 }
