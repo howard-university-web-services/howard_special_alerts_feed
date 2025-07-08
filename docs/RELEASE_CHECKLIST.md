@@ -134,8 +134,8 @@ For support, bug reports, or feature requests, visit our [GitHub repository](htt
 ## Post-Release Tasks
 
 ### ✅ After Release
-- [ ] Create Git tag: `git tag -a v11.0.2 -m "Release version 11.0.2"`
-- [ ] Push tag: `git push origin v11.0.2`
+- [x] Create Git tag: `git tag -a v11.0.2 -m "Release version 11.0.2"`
+- [x] Push tag: `git push origin v11.0.2`
 - [ ] Create GitHub release with release notes
 - [ ] Update Packagist (should auto-update via webhook)
 - [ ] Notify team of new release
